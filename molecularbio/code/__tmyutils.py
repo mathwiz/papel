@@ -42,6 +42,17 @@ class TestCase1(unittest.TestCase):
         self.assertTrue(count < limit and count > limit / 2)
 
 
+    def test_random_event3(self):
+        probability = 0.001
+        limit = 10000
+        count = 0
+        for x in range(0, limit):
+            if myutils.random_event(probability):
+                count += 1
+        print(count)
+        self.assertTrue(count > 0)
+
+
 
 if __name__ == '__main__':
     unittest.main()

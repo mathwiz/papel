@@ -11,4 +11,14 @@ def flip_binchar(binarychar):
 
 
 def random_event(prob):
-    return random.random() < prob
+    scale = 10^5
+    return random.random() * scale < prob * scale
+
+
+def printable_at_width(s, width=80):
+    if len(s) <= width:
+        return s
+    else:
+        return s[:width] + '\n' + printable_at_width(s[width:], width)
+
+
