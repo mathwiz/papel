@@ -16,7 +16,7 @@ def random_event(prob):
 
 
 def printable_at_width(s, width=80):
-    if len(s) <= width:
+    if len(s) < width:
         return s
     else:
         return s[:width] + '\n' + printable_at_width(s[width:], width)

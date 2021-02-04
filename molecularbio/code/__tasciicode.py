@@ -38,9 +38,9 @@ class TestCase1(unittest.TestCase):
         print("There were %d mutated proteins out of %d trials" %(num_mutated, trials))
         print("Last mutation: %s" %(asciicode.binary_to_text(mutation)))
         print('orig')
-        print(myutils.printable_at_width(coded, 70))
+        print(myutils.printable_at_width(coded, 28))
         print('last mutation')
-        print(myutils.printable_at_width(mutation, 70))
+        print(myutils.printable_at_width(mutation, 28))
         diffs = [ i for i in range(len(coded)) if coded[i] != mutation[i] ]
         print("Differences at positions: %s" %(diffs))
 
