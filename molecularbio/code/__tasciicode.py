@@ -2,16 +2,15 @@ import asciicode
 import unittest
 import random
 
-alpha = 'ABCDEFGHIJKLMNOPQRST'
+protein = "ACTIN"
+
 
 class TestCase1(unittest.TestCase):
-    def test2(self):
-        print(len(alpha))
-        for x in range(10):
-            x = random.randint(0,len(alpha)-1)
-            letter = alpha[x]
-            coded = code.rot13(letter)
-            print(letter + '->' + coded)
+    def test1(self):
+        print(protein)
+        for x in protein:
+            coded = 1
+            print(x + '->' + coded)
 
 
 
