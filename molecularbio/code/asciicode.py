@@ -12,7 +12,7 @@ def text_to_binary(text):
 
 def char_from_binary(binary):
     num = int(binary, 2)
-    return chr(num) if num > 31 and num < 128 else 32
+    return chr(num) if num > 31 and num < 128 else " "
 
 
 def binary_to_text(chars):
