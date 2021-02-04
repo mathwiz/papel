@@ -1,10 +1,10 @@
-def binary_string(char):
-    return (bin(ord(char)))
+def binary_str(char):
+    return (bin(ord(char)))[2:]
 
 
 def binary_list(text):
-    return [ bin(ord(x)) for x in text ]
+    return [ binary_str(x) for x in text ]
 
 
-def binary_string(text):
+def binary(text):
     return "".join(binary_list(text))
