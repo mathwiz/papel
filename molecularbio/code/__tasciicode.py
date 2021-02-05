@@ -59,7 +59,7 @@ class TestCase1(unittest.TestCase):
 
     def test6(self):
         print("ascii encoding")
-        protein = "Tyr aminoacyl-tRNA synthetase"
+        protein = "ALA aminoacyl-tRNA synthetase"
         asciicode.print_with_decoding(protein, 70)
 
 

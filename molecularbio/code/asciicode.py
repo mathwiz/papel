@@ -29,9 +29,7 @@ def text_with_binary(text):
 
 
 def print_with_decoding(text, width):
-    chars, codes = text_with_binary(text)
-    charlist = list_of_width(chars, width)
-    codelist = list_of_width(codes, width)
+    charlist, codelist = map(lambda x: list_of_width(x, width), text_with_binary(text))
     printables = list(map(lambda x, y: (x, y), charlist, codelist))
     for line1, line2 in printables:
         print(line1)
@@ -47,6 +45,5 @@ def list_of_width(elements, width=80):
         if len(temp) + len(x) >= width or i == last:
             lines.append(temp)
             temp = ""
-        
     return lines
 
