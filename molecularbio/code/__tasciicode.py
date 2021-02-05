@@ -59,8 +59,8 @@ class TestCase1(unittest.TestCase):
 
     def test6(self):
         print("ascii encoding")
-        protein = "rnase" # "alcohol dehydrogenase"
-        asciicode.print_with_decoding(protein, 35)
+        protein = "Tyr aminoacyl-tRNA synthetase"
+        asciicode.print_with_decoding(protein, 70)
 
 
 if __name__ == '__main__':

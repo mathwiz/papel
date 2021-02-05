@@ -12,7 +12,7 @@ def text_to_binary(text):
 
 def char_from_binary(binary):
     num = int(binary, 2)
-    return chr(num) if num > 31 and num < 128 else "?"
+    return chr(num) if num > 31 and num < 128 else '-'
 
 
 def binary_to_text(chars):
@@ -30,7 +30,9 @@ def text_with_binary(text):
 
 def print_with_decoding(text, width):
     chars, codes = text_with_binary(text)
-    printables = list(map(lambda x, y: (x ,y), chars, codes))
+    charlist = list_of_width(chars, width)
+    codelist = list_of_width(codes, width)
+    printables = list(map(lambda x, y: (x, y), charlist, codelist))
     for line1, line2 in printables:
         print(line1)
         print(line2)
@@ -38,6 +40,13 @@ def print_with_decoding(text, width):
 
 def list_of_width(elements, width=80):
     lines = []
-    
+    temp = ""
+    last = len(elements) - 1
+    for i,x in enumerate(elements):
+        temp += x + " "
+        if len(temp) + len(x) >= width or i == last:
+            lines.append(temp)
+            temp = ""
+        
     return lines
 
