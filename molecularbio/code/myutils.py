@@ -22,3 +22,9 @@ def printable_at_width(s, width=80):
         return s[:width] + '\n' + printable_at_width(s[width:], width)
 
 
+def break_string(s, size):
+    return [ s[i:i+size] for i in range(0, len(s), size) ]
+
+
+def insert_delim(s, interval, delim=" "):
+    return delim.join(break_string(s, interval))
