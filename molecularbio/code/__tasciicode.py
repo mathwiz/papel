@@ -23,7 +23,7 @@ class TestCase1(unittest.TestCase):
         self.assertEqual(asciicode.text_to_binary(protein), "".join([A,C,T,I,N]))
 
     def test3(self):
-        polymer = "LYSaminoacyltRNAsynthetase"
+        polymer = "LYS-aminoacyl-tRNA synthetase"
         # print(polymer)
         coded = asciicode.text_to_binary(polymer)
         flip = lambda x: myutils.flip_binchar(x) if myutils.random_event(0.001) else x
@@ -37,10 +37,10 @@ class TestCase1(unittest.TestCase):
                 mutation = mutated
         print("There were %d mutated proteins out of %d trials" %(num_mutated, trials))
         print("Last mutation: %s" %(asciicode.binary_to_text(mutation)))
-        print('orig')
-        print(myutils.printable_at_width(coded, 35))
-        print('last mutation')
-        print(myutils.printable_at_width(mutation, 35))
+        # print('orig')
+        # print(myutils.printable_at_width(coded, 35))
+        # print('last mutation')
+        # print(myutils.printable_at_width(mutation, 35))
         diffs = [ i for i in range(len(coded)) if coded[i] != mutation[i] ]
         print("Differences at positions: %s" %(diffs))
 
@@ -51,9 +51,16 @@ class TestCase1(unittest.TestCase):
         decoded = asciicode.binary_to_text(coded)
         self.assertEqual(decoded, protein)
 
+
     def test5(self):
         binary = '11000011101101110100111011101101111'
         print("%s is %s" %(binary, asciicode.binary_to_text(binary)))
+
+
+    def test6(self):
+        print("ascii encoding")
+        protein = "rnase" # "alcohol dehydrogenase"
+        asciicode.print_with_decoding(protein, 35)
 
 
 if __name__ == '__main__':
